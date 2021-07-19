@@ -1,0 +1,26 @@
+{
+		"Kind": 16,
+		"Args": [132, 599, 515, 394.859375, 473, 410.28125, 85],
+		"When": 5070
+},
+{
+		"When": 5071,
+		"Kind": 8197,
+		"Args": ["Product Added", "{"description_str ":"Highly experimental new fewt.",
+		    "displayName_str ":"Mangocados ","
+			featuredFruit_real ":1,
+			"imgName_str ":"mangocados ",
+			"price_str ":"7.99 ",
+			"unit_str ":"ea ",
+			"id_str ":"mangocados ",
+			"$priority ":null,
+			"hashKey_str ":"object: 5 ",
+			"product_id_str ":"o8hq9bbzz "}"
+		]
+
+},
+{
+		"Kind": 48,
+		"Args": ["log", ""Mangocados embiggen user cart.""
+		]
+}

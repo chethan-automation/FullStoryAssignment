@@ -5,6 +5,6 @@ Test Plan
 3) Verify page navigation is captured in the FS bundle (ex: navigating from homepage to cart page)
 4) Verify blocked elements are not captured by FS (ex: credit card info)
 5) Verify page API response include configured blocked elements
-6) Verify user inactivity is captured through heartbeat events - @to be automated
+6) Verify heartbeat events are sent even in user inactivity state- @automated
 7) Verify that XHR network requests made by the application are recorded (ex: bundle requests)
 8) Verify that errors are captured by bundle events (Ex: clicking on purchase without customer details for shipping and payment)

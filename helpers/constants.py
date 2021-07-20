@@ -1,1 +1,13 @@
 BASE_URL = "https://fruitshoppe.firebaseapp.com/"
+
+DEFAULT_TIMEOUT = 20
+
+#Event Types
+CLICK_EVENT = 16
+CUSTOM_EVENT = 8197
+NAVIGATE_EVENT = 37
+HEART_BEAT_EVENT = 54
+
+#Credit Card info
+CREDIT_CARD_NUMBER = '1111222233334444'
+CREDIT_CARD_CVV = '333'

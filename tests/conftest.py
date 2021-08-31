@@ -11,3 +11,4 @@ def setup():
     yield driver
     # For cleanup, quit the driver instance
     driver.quit()
+

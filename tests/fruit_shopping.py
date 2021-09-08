@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
 
-@allure.title('Verify FS events in the Cart workflow')
+@allure.title('Verify network events in the Cart workflow')
 @allure.severity(allure.severity_level.MINOR)
 @pytest.mark.E2E
 def test_cart_workflow(setup):
@@ -19,7 +19,7 @@ def test_cart_workflow(setup):
         WebDriverWait(driver, const.DEFAULT_TIMEOUT).until(
             EC.presence_of_all_elements_located((By.CSS_SELECTOR, Locators.mangocados_css_selector)))
 
-    with allure.step('Add the featured fruit Mangocados to cart and verify mouse click is captured by FS'):
+    with allure.step('Add the featured fruit Mangocados to cart and verify mouse click is captured by the aplication'):
         utils.initial_wait_for_requests(driver)
         seq = utils.get_last_seq(driver)
 
@@ -30,7 +30,7 @@ def test_cart_workflow(setup):
         assert utils.validate_event(driver, const.CLICK_EVENT), "Click event is not found"
         assert utils.validate_event(driver, const.CUSTOM_EVENT, "Mangocados"), "Mangocados is not added to the cart"
 
-    with allure.step('Go to cart and verify the navigation to cart page event is captured by FS'):
+    with allure.step('Go to cart and verify the navigation to cart page event is captured by the application'):
         seq = utils.get_last_seq(driver)
 
         driver.find_element_by_css_selector(Locators.cart_css_selector).click()
@@ -47,7 +47,7 @@ def test_cart_workflow(setup):
         WebDriverWait(driver, const.DEFAULT_TIMEOUT).until(EC.element_to_be_clickable((By.ID, Locators.first_name_id)))
 
     with allure.step(
-            'Provide the required details for shipping and payment and verify credit card number and CVV are not captured by FS before checkout'):
+            'Provide the required details for shipping and payment and verify credit card number and CVV are not captured by the application before checkout'):
         driver.find_element_by_id(Locators.first_name_id).send_keys('firstname')
         driver.find_element_by_id(Locators.last_name_id).send_keys('lastname')
         driver.find_element_by_id(Locators.address_1_id).send_keys('address1')
@@ -69,7 +69,7 @@ def test_cart_workflow(setup):
         assert not utils.is_text_present_in_requests(driver,
                                                      const.CREDIT_CARD_NUMBER), "Credit card number is found in the events"
 
-    with allure.step('Checkout the item and verify credit card number and CVV are not captured by FS after checkout'):
+    with allure.step('Checkout the item and verify credit card number and CVV are not captured by the application after checkout'):
         seq = utils.get_last_seq(driver)
 
         driver.find_element_by_css_selector(Locators.checkout_css_selector).click()
